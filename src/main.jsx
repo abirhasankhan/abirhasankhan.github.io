@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import {
-	HashRouter as Router, // Use HashRouter for GitHub Pages
+	HashRouter as Router, // Change to HashRouter
 	Route,
 	Routes,
 } from "react-router-dom";
