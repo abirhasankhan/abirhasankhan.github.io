@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
 	return (
-		
 		<footer className="bg-white dark:bg-gray-800 border-y dark:border-gray-700">
 			<div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
 				<div className="md:flex md:justify-between">
@@ -44,7 +43,7 @@ const Footer = () => {
 							<ul className="text-gray-500 dark:text-gray-400 font-medium">
 								<li className="mb-4">
 									<a
-										href="https://github.com/abirkhan-zero"
+										href="https://github.com/abirhasankhan" //https://discord.com/users/538774514142806018
 										className="hover:underline"
 										target="_blank"
 										rel="noreferrer"
@@ -53,9 +52,14 @@ const Footer = () => {
 									</a>
 								</li>
 								<li>
-									<Link to="/" className="hover:underline">
+									<a
+										href="https://discord.com/users/538774514142806018"
+										className="hover:underline"
+										target="_blank"
+										rel="noreferrer"
+									>
 										Discord
-									</Link>
+									</a>
 								</li>
 							</ul>
 						</div>
