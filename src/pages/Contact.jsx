@@ -44,7 +44,7 @@ const Contact = () => {
 					<FaLinkedin className="text-3xl" />
 				</motion.a>
 				<motion.a
-					href="https://discord.com/users/your-discord-id"
+					href="https://discord.com/users/538774514142806018"
 					target="_blank"
 					rel="noopener noreferrer"
 					whileHover={{ scale: 1.2 }}
