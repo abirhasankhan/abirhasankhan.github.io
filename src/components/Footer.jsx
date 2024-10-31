@@ -87,7 +87,7 @@ const Footer = () => {
 					<span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
 						© 2024
 						<a href="" className="hover:underline">
-							@abir khan
+							@abir khan | by AceAres
 						</a>
 						. All Rights Reserved.
 					</span>
