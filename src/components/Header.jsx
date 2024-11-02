@@ -1,82 +1,52 @@
-// src/components/Navbar.jsx
+// Navbar.jsx
 import { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext.jsx";
+import Logo from "./Logo.jsx";
 
 const Header = () => {
 	const { theme, toggleTheme } = useContext(ThemeContext);
 	const location = useLocation();
-	const [isOpen, setIsOpen] = useState(false); // Toggle for mobile menu
+	const [isOpen, setIsOpen] = useState(false);
 
-	const isActive = (path) => {
-		return location.pathname === path ? "text-blue-500 font-bold" : ""; // Highlight active link
-	};
+	const isActive = (path) => location.pathname === path ? "text-blue-500 font-semibold" : "";
 
 	return (
-		<header className="shadow sticky z-50 top-0">
+		<header className="shadow-md sticky top-0 z-50">
 			<nav
-				className={`p-4 ${
+				className={`p-4 transition-colors duration-300 ${
 					theme === "light"
-						? "bg-gray-100 text-gray-800"
-						: "bg-gray-800 text-white"
-				} shadow sticky top-0 z-50`}
+						? "bg-white text-gray-800"
+						: "bg-gray-900 text-gray-100"
+				} shadow-md`}
 			>
 				<div className="container mx-auto flex justify-between items-center">
-					<h1 className="text-xl font-bold">Abir Khan</h1>
+					<Logo />
 
 					{/* Desktop Menu */}
-					<div className="hidden md:flex space-x-4">
-						<Link
-							to="/"
-							className={`hover:text-blue-400 ${isActive("/")}`}
-						>
-							<b>Home</b>
-						</Link>
-						<Link
-							to="/about"
-							className={`hover:text-blue-400 ${isActive(
-								"/about"
-							)}`}
-						>
-							<b>About</b>
-						</Link>
-						<Link
-							to="/skill"
-							className={`hover:text-blue-400 ${isActive(
-								"/skill"
-							)}`}
-						>
-							<b>Skill</b>
-						</Link>
-						<Link
-							to="/projects"
-							className={`hover:text-blue-400 ${isActive(
-								"/projects"
-							)}`}
-						>
-							<b>Projects</b>
-						</Link>
-						<Link
-							to="/contact"
-							className={`hover:text-blue-400 ${isActive(
-								"/contact"
-							)}`}
-						>
-							<b>Contact</b>
-						</Link>
+					<div className="hidden md:flex space-x-6">
+						{['/', '/about', '/skill', '/projects', '/contact'].map((path, index) => (
+							<Link
+								key={index}
+								to={path}
+								className={`hover:text-blue-400 ${isActive(path)} transition-all duration-300`}
+							>
+								<b>{path.replace("/", "").toUpperCase() || "HOME"}</b>
+							</Link>
+						))}
 					</div>
 
 					{/* Theme Toggle Button */}
 					<button
 						onClick={toggleTheme}
-						className="ml-4 p-2 border rounded hover:bg-blue-400 transition duration-300"
+						className="ml-4 p-2 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-400 dark:hover:bg-blue-600 transition-all duration-300"
 					>
 						{theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
 					</button>
 
 					{/* Mobile Menu Button */}
 					<button
-						className="md:hidden ml-4 p-2 border rounded hover:bg-blue-400 transition duration-300"
+						className="md:hidden ml-4 p-2 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-400 dark:hover:bg-blue-600 transition-all duration-300"
 						onClick={() => setIsOpen(!isOpen)}
 					>
 						{isOpen ? "✖️" : "☰"}
@@ -86,40 +56,16 @@ const Header = () => {
 				{/* Mobile Menu */}
 				{isOpen && (
 					<div className="md:hidden flex flex-col items-center mt-4 space-y-2">
-						<Link
-							to="/"
-							onClick={() => setIsOpen(false)}
-							className={`hover:text-blue-400 ${isActive("/")}`}
-						>
-							<b>Home</b>
-						</Link>
-						<Link
-							to="/about"
-							onClick={() => setIsOpen(false)}
-							className={`hover:text-blue-400 ${isActive(
-								"/about"
-							)}`}
-						>
-							<b>About</b>
-						</Link>
-						<Link
-							to="/projects"
-							onClick={() => setIsOpen(false)}
-							className={`hover:text-blue-400 ${isActive(
-								"/projects"
-							)}`}
-						>
-							<b>Projects</b>
-						</Link>
-						<Link
-							to="/contact"
-							onClick={() => setIsOpen(false)}
-							className={`hover:text-blue-400 ${isActive(
-								"/contact"
-							)}`}
-						>
-							<b>Contact</b>
-						</Link>
+						{['/', '/about', '/skill', '/projects', '/contact'].map((path, index) => (
+							<Link
+								key={index}
+								to={path}
+								onClick={() => setIsOpen(false)}
+								className={`hover:text-blue-400 ${isActive(path)} transition-all duration-300`}
+							>
+								<b>{path.replace("/", "").toUpperCase() || "HOME"}</b>
+							</Link>
+						))}
 					</div>
 				)}
 			</nav>
