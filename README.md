@@ -18,7 +18,7 @@ Welcome to my portfolio! This is a personal portfolio website showcasing my proj
 - **Dark/Light Mode Toggle**: Switch between dark and light themes to match your preference.
 - **Mobile-Responsive Navbar**: A responsive navigation bar that collapses on smaller screens.
 - **Animated Components**: Smooth transitions and animations powered by Framer Motion.
-- **Interactive Project Display**: Detailed project descriptions and images, with quick links to source code and live demos.
+- **Interactive Project Display**: Detailed project descriptions and images, with quick links to source code.
 
 ## Demo
 
