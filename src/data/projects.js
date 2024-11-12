@@ -17,6 +17,10 @@ import ewu_buysell03 from '../images/ewu_buysell03.PNG';
 import capstone01 from '../images/capstone01.PNG';
 import capstone02 from '../images/capstone02.PNG';
 import capstone03 from '../images/capstone03.PNG';
+import restaurant1 from '../images/restaurant_app_react01.PNG';
+import restaurant2 from '../images/restaurant_app_react02.PNG';
+import restaurant3 from '../images/restaurant_app_react03.PNG';
+import restaurant4 from '../images/restaurant_app_react04.PNG';
 
 const projects = [
     {
@@ -58,6 +62,14 @@ const projects = [
         details: "Allowing students to register and form groups, faculty to monitor and grade progress, and administrators to oversee project allocation and grading.",
         images: [capstone01, capstone02, capstone03],
         githubLink: "https://github.com/abirhasankhan/capstone-management-webapp"
+    },
+    {
+        id: 6,
+        title: "My Restaurant App",
+        description: "My Restaurant App is a beautifully designed, responsive web application built using React.js that allows users to explore various aspects of a restaurant, including menu items, client testimonials, booking a table, and contact details.",
+        details: "The app features modern UI/UX elements, smooth animations, and an intuitive interface for seamless navigation.",
+        images: [restaurant1, restaurant2, restaurant3, restaurant4],
+        githubLink: "https://github.com/abirhasankhan/my-restaurant-app"
     }
 ];
 
