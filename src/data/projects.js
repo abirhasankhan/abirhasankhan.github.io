@@ -1,4 +1,3 @@
-// src/data/projects.js
 import vr01 from '../images/vr01.png';
 import vr02 from '../images/vr02.png';
 import vr03 from '../images/vr03.png';
@@ -21,6 +20,14 @@ import restaurant1 from '../images/restaurant_app_react01.PNG';
 import restaurant2 from '../images/restaurant_app_react02.PNG';
 import restaurant3 from '../images/restaurant_app_react03.PNG';
 import restaurant4 from '../images/restaurant_app_react04.PNG';
+import sms01 from '../images/SMS01.png'; // Add images for SMS-assessment
+import sms02 from '../images/sms02.png';
+import sms03 from '../images/SMS03.png';
+import sms04 from '../images/SMS04.png';
+import sms05 from '../images/SMS05.png';
+import sms06 from '../images/SMS06.png';
+
+
 
 const projects = [
     {
@@ -70,6 +77,14 @@ const projects = [
         details: "The app features modern UI/UX elements, smooth animations, and an intuitive interface for seamless navigation.",
         images: [restaurant1, restaurant2, restaurant3, restaurant4],
         githubLink: "https://github.com/abirhasankhan/my-restaurant-app"
+    },
+    {
+        id: 7,
+        title: "SMS-assessment (School Management System)",
+        description: "SMS-assessment is a comprehensive School Management System built to manage student records, teacher profiles, grades, schedules, and communication.",
+        details: "It includes robust features like role-based permissions, real-time notifications, and report generation to enhance school operations for administrators, teachers, and students.",
+        images: [sms01, sms02, sms03, sms04, sms05, sms06],
+        githubLink: "https://github.com/abirhasankhan/SMS-assessment"
     }
 ];
 
