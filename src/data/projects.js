@@ -21,7 +21,7 @@ import restaurant2 from '../images/restaurant_app_react02.PNG';
 import restaurant3 from '../images/restaurant_app_react03.PNG';
 import restaurant4 from '../images/restaurant_app_react04.PNG';
 import sms01 from '../images/SMS01.png'; // Add images for SMS-assessment
-import sms02 from '../images/sms02.png';
+import sms02 from '../images/SMS02.png';
 import sms03 from '../images/SMS03.png';
 import sms04 from '../images/SMS04.png';
 import sms05 from '../images/SMS05.png';
