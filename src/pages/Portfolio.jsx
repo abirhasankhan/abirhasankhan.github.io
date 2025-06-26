@@ -1,3 +1,4 @@
+// pages/Portfolio.jsx
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
@@ -5,10 +6,13 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
+import FireflyLayer from "../components/FireflyLayer";
 
 const Portfolio = () => {
 	const { darkMode } = useOutletContext();
 	const [activeSection, setActiveSection] = useState("hero");
+	const [firefliesOn, setFirefliesOn] = useState(true);
+	const [firefliesCount, setFirefliesCount] = useState(20);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -20,7 +24,6 @@ const Portfolio = () => {
 				if (element) {
 					const offsetTop = element.offsetTop;
 					const offsetHeight = element.offsetHeight;
-
 					if (
 						scrollPosition >= offsetTop &&
 						scrollPosition < offsetTop + offsetHeight
@@ -43,9 +46,37 @@ const Portfolio = () => {
 	};
 
 	return (
-		<div className="relative">
+		<div
+			className={`min-h-screen transition-all duration-500 ${
+				darkMode
+					? "bg-gray-900 text-green-400"
+					: "bg-amber-50 text-purple-900"
+			}`}
+		>
+			{/* Firefly Toggle */}
+			{/* <button
+				className="fixed top-4 right-4 z-50 px-4 py-2 text-xs font-semibold rounded bg-black/50 text-white"
+				onClick={() => setFirefliesOn((prev) => !prev)}
+			>
+				{firefliesOn
+					? "Catch All Fireflies 🪰"
+					: "Release Fireflies ✨"}
+			</button> */}
+
+			{/* Firefly Count */}
+			{/* <p className="fixed top-4 left-4 z-50 bg-black/40 px-3 py-1 text-white text-xs rounded">
+				🪰 Fireflies caught: {20 - firefliesCount}
+			</p> */}
+
+			{/* Fireflies */}
+			<FireflyLayer
+				darkMode={darkMode}
+				enabled={firefliesOn}
+				onUpdateCount={(count) => setFirefliesCount(count)}
+			/>
+
 			{/* Retro Grid Background */}
-			<div className="fixed inset-0 opacity-10 pointer-events-none -z-10">
+			<div className="fixed inset-0 opacity-10 pointer-events-none">
 				<div
 					className={`w-full h-full ${
 						darkMode
@@ -80,7 +111,6 @@ const Portfolio = () => {
 						width: var(--target-width);
 					}
 				}
-
 				@keyframes fadeIn {
 					from {
 						opacity: 0;
@@ -91,7 +121,6 @@ const Portfolio = () => {
 						transform: translateY(0);
 					}
 				}
-
 				.animate-fade-in {
 					animation: fadeIn 1s ease-out;
 				}
