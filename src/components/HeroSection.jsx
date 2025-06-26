@@ -193,6 +193,30 @@ const HeroSection = ({ darkMode, scrollToSection }) => {
 									? "text-purple-400"
 									: "text-white",
 							},
+							{
+								href: "/portfolio/AbirkhanCV.pdf",
+								icon: () => (
+									<svg
+										className="w-4 h-4 mr-2"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											d="M4 4v16h16V4H4zm8 8v4m0 0l-2-2m2 2l2-2m-2-4v4"
+										/>
+									</svg>
+								),
+								text: "[DOWNLOAD CV]",
+								color: darkMode
+									? "text-yellow-300"
+									: "text-yellow-100",
+								download: true,
+							},
 						].map((btn, index) => (
 							<a
 								key={index}
