@@ -6,6 +6,8 @@ const Navigation = ({
 	toggleDarkMode,
 	scrollToSection,
 	activeSection,
+	isMusicPlaying, // <-- add this prop
+	toggleMusic, // <-- add this prop
 }) => {
 	const [isTyping, setIsTyping] = useState(true);
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -63,6 +65,7 @@ const Navigation = ({
 							)
 						)}
 
+						{/* Dark Mode Toggle */}
 						<button
 							onClick={toggleDarkMode}
 							className={`p-2 rounded-full transition-all transform hover:scale-110 hover:rotate-180 duration-300 ${
@@ -70,8 +73,27 @@ const Navigation = ({
 									? "bg-gray-800 text-yellow-400 hover:bg-gray-700"
 									: "bg-purple-100 text-purple-600 hover:bg-purple-200"
 							}`}
+							aria-label="Toggle Dark Mode"
 						>
 							{darkMode ? <Sun size={18} /> : <Moon size={18} />}
+						</button>
+
+						{/* Music Toggle Button */}
+						<button
+							onClick={toggleMusic}
+							className={`p-2 rounded-full transition-all transform hover:scale-110 duration-300 border ${
+								darkMode
+									? "border-green-400 text-green-400 hover:bg-green-800"
+									: "border-purple-600 text-purple-600 hover:bg-purple-200"
+							}`}
+							aria-label={
+								isMusicPlaying ? "Pause Music" : "Play Music"
+							}
+							title={
+								isMusicPlaying ? "Pause Music" : "Play Music"
+							}
+						>
+							{isMusicPlaying ? "🔊" : "🔇"}
 						</button>
 					</div>
 
@@ -84,6 +106,7 @@ const Navigation = ({
 									? "text-green-300 hover:bg-gray-800"
 									: "text-purple-600 hover:bg-purple-100"
 							}`}
+							aria-label="Toggle Mobile Menu"
 						>
 							{mobileMenuOpen ? (
 								<X size={22} />
@@ -120,6 +143,8 @@ const Navigation = ({
 								</button>
 							)
 						)}
+
+						{/* Dark Mode Toggle */}
 						<button
 							onClick={toggleDarkMode}
 							className={`w-fit p-2 rounded-full transition transform hover:scale-110 hover:rotate-180 duration-300 ${
@@ -127,8 +152,27 @@ const Navigation = ({
 									? "bg-gray-800 text-yellow-400 hover:bg-gray-700"
 									: "bg-purple-100 text-purple-600 hover:bg-purple-200"
 							}`}
+							aria-label="Toggle Dark Mode"
 						>
 							{darkMode ? <Sun size={18} /> : <Moon size={18} />}
+						</button>
+
+						{/* Music Toggle Button */}
+						<button
+							onClick={toggleMusic}
+							className={`w-fit p-2 rounded-full transition transform hover:scale-110 duration-300 border ${
+								darkMode
+									? "border-green-400 text-green-400 hover:bg-green-800"
+									: "border-purple-600 text-purple-600 hover:bg-purple-200"
+							}`}
+							aria-label={
+								isMusicPlaying ? "Pause Music" : "Play Music"
+							}
+							title={
+								isMusicPlaying ? "Pause Music" : "Play Music"
+							}
+						>
+							{isMusicPlaying ? "🔊 Music On" : "🔇 Music Off"}
 						</button>
 					</div>
 				)}

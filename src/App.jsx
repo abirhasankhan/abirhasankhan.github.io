@@ -1,16 +1,30 @@
-import { useEffect } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
 import Navigation from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
-	
+	const [activeSection, setActiveSection] = useState("hero");
+
+	// Music state
+	const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+	const audioRef = useRef(null);
 
 	const toggleDarkMode = () => setDarkMode((prev) => !prev);
-	const [activeSection, setActiveSection] = useState("hero");
+
+	const toggleMusic = () => {
+		if (!audioRef.current) return;
+		if (isMusicPlaying) {
+			audioRef.current.pause();
+		} else {
+			audioRef.current.play().catch((error) => {
+				console.log("Play failed:", error);
+			});
+		}
+		setIsMusicPlaying(!isMusicPlaying);
+	};
+	  
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -57,6 +71,8 @@ function App() {
 				toggleDarkMode={toggleDarkMode}
 				scrollToSection={scrollToSection}
 				activeSection={activeSection}
+				isMusicPlaying={isMusicPlaying}
+				toggleMusic={toggleMusic}
 			/>
 
 			<div className="flex-grow">
@@ -64,6 +80,14 @@ function App() {
 			</div>
 
 			<Footer darkMode={darkMode} />
+
+			{/* Hidden audio player */}
+			<audio
+				ref={audioRef}
+				src="/portfolio/genshin-main-theme.mp3"
+				loop
+				preload="auto"
+			/>
 		</div>
 	);
 }

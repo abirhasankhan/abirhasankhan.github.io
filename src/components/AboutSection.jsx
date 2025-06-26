@@ -172,7 +172,7 @@ const AboutSection = ({ darkMode }) => {
 									>
 										{edu.school}
 									</div>
-									<div
+									{/* <div
 										className={`${
 											darkMode
 												? "text-gray-400"
@@ -180,7 +180,7 @@ const AboutSection = ({ darkMode }) => {
 										} text-sm font-mono`}
 									>
 										{edu.gpa}
-									</div>
+									</div> */}
 								</div>
 							))}
 						</div>
