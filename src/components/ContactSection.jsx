@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const ContactSection = ({ darkMode }) => {
+	const formRef = useRef(null);
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
 		message: "",
 	});
 	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [statusMessage, setStatusMessage] = useState("");
 
 	const handleInputChange = (e) => {
 		setFormData({
@@ -19,11 +22,45 @@ const ContactSection = ({ darkMode }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setIsSubmitting(true);
-		setTimeout(() => {
-			setIsSubmitting(false);
-			setFormData({ name: "", email: "", message: "" });
-			alert("Message sent successfully!");
-		}, 2000);
+		setStatusMessage("");
+
+		// 1. Send user message to your email
+		emailjs
+			.sendForm(
+				import.meta.env.VITE_EMAILJS_SERVICE_ID,
+				import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+				formRef.current,
+				import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+			)
+			.then(() => {
+				return emailjs.send(
+					import.meta.env.VITE_EMAILJS_SERVICE_ID,
+					import.meta.env.VITE_EMAILJS_REPLY_TEMPLATE_ID,
+					{
+						to_name: formData.name,
+						message: formData.message,
+						to_email: formData.email,
+					},
+					import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+				);
+			})
+			.then(() => {
+				setIsSubmitting(false);
+				setStatusMessage("✅ Message sent successfully!");
+				setFormData({ name: "", email: "", message: "" });
+
+				// Clear status message after 5 seconds
+				setTimeout(() => {
+					setStatusMessage("");
+				}, 5000);
+			})
+			.catch((error) => {
+				setIsSubmitting(false);
+				setStatusMessage(
+					"❌ Failed to send message. Please try again."
+				);
+				console.error("EmailJS error:", error);
+			});
 	};
 
 	return (
@@ -164,7 +201,11 @@ const ContactSection = ({ darkMode }) => {
 							[SEND MESSAGE]
 						</h3>
 
-						<form onSubmit={handleSubmit} className="space-y-6">
+						<form
+							ref={formRef}
+							onSubmit={handleSubmit}
+							className="space-y-6"
+						>
 							{/* Name */}
 							<div>
 								<label
@@ -258,6 +299,19 @@ const ContactSection = ({ darkMode }) => {
 									? "[SENDING...]"
 									: "[SEND MESSAGE]"}
 							</button>
+
+							{/* Status Message */}
+							{statusMessage && (
+								<p
+									className={`mt-4 font-mono font-bold text-center ${
+										statusMessage.includes("✅")
+											? "text-green-400"
+											: "text-red-500"
+									}`}
+								>
+									{statusMessage}
+								</p>
+							)}
 						</form>
 					</div>
 				</div>
