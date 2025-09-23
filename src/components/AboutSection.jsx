@@ -39,7 +39,7 @@ const AboutSection = ({ darkMode }) => {
 		{
 			company: "Liveincodes",
 			position: "Software Engineer",
-			duration: "March 2025 - Present",
+			duration: "March 2025 - Agust 2025",
 			type: "Full-time",
 			description:
 				"Contributing to Software Development Department remotely, writing clean maintainable code and collaborating with cross-functional teams.",
