@@ -4,10 +4,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // Include .PNG files
+  // Include image files
   assetsInclude: ['**/*.png', '**/*.PNG', '**/*.jpg', '**/*.JPG'],
-  base: '/portfolio/', // Ensure this matches your GitHub repository name
+  base: '/', // Serve from root, not /portfolio/
   build: {
-    outDir: 'dist', // Ensures output is in the correct folder
+    outDir: 'dist', // Output folder
   },
 });
