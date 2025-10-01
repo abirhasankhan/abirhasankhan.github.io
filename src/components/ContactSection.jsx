@@ -2,6 +2,10 @@ import { useState, useRef } from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import emailjs from "emailjs-com";
 
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+
+
 const ContactSection = ({ darkMode }) => {
 	const formRef = useRef(null);
 	const [formData, setFormData] = useState({
@@ -30,7 +34,6 @@ const ContactSection = ({ darkMode }) => {
 				import.meta.env.VITE_EMAILJS_SERVICE_ID,
 				import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
 				formRef.current,
-				import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 			)
 			.then(() => {
 				return emailjs.send(
@@ -41,7 +44,6 @@ const ContactSection = ({ darkMode }) => {
 						message: formData.message,
 						to_email: formData.email,
 					},
-					import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 				);
 			})
 			.then(() => {
