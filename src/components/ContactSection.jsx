@@ -2,8 +2,6 @@ import { useState, useRef } from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import emailjs from "emailjs-com";
 
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-
 
 
 const ContactSection = ({ darkMode }) => {
@@ -31,19 +29,21 @@ const ContactSection = ({ darkMode }) => {
 		// 1. Send user message to your email
 		emailjs
 			.sendForm(
-				import.meta.env.VITE_EMAILJS_SERVICE_ID,
-				import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+				"service_z2trwox",
+				"template_b5xrugi",
 				formRef.current,
+				"UZKjb5SR995m26Zzo"
 			)
 			.then(() => {
 				return emailjs.send(
-					import.meta.env.VITE_EMAILJS_SERVICE_ID,
-					import.meta.env.VITE_EMAILJS_REPLY_TEMPLATE_ID,
+					"service_z2trwox",
+					"template_eqf3qbw",
 					{
 						to_name: formData.name,
 						message: formData.message,
 						to_email: formData.email,
 					},
+					"UZKjb5SR995m26Zzo"
 				);
 			})
 			.then(() => {
