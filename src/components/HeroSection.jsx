@@ -194,7 +194,7 @@ const HeroSection = ({ darkMode, scrollToSection }) => {
 									: "text-white",
 							},
 							{
-								href: "/portfolio/AbirkhanCV.pdf",
+								href: "/AbirkhanCV.pdf",
 								icon: () => (
 									<svg
 										className="w-4 h-4 mr-2"

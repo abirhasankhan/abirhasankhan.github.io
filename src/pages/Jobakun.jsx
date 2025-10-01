@@ -181,7 +181,7 @@ function Jobakun() {
 
 			<audio
 				ref={audioRef}
-				src="/portfolio/genshin-main-theme.mp3"
+				src="/genshin-main-theme.mp3"
 				loop
 				preload="auto"
 			/>

@@ -89,7 +89,7 @@ const AboutSection = ({ darkMode }) => {
 								{
 									icon: Globe,
 									text: "Portfolio Website",
-									link: "https://abirhasankhan.github.io/portfolio",
+									link: "https://abirhasankhan.github.io",
 								},
 							].map((item, index) => (
 								<div
