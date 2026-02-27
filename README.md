@@ -22,7 +22,7 @@ Welcome to my portfolio! This is a personal portfolio website showcasing my proj
 
 ## Demo
 
-You can view the live demo of this portfolio at: [https://abirhasankhan.github.io/portfolio/](https://abirhasankhan.github.io/portfolio/)
+You can view the live demo of this portfolio at: [https://abirhasankhan.github.io/](https://abirhasankhan.github.io/)
 
 ## Technologies Used
 
