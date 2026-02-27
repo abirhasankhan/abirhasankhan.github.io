@@ -111,20 +111,20 @@ const projects = [
         status: "Completed",
         tech: ["React.js", "Tailwind CSS", "Responsive Design", "Animations"],
     },
-    {
-        id: 7,
-        title: "SMS-assessment (School Management System)",
-        description:
-            "SMS-assessment is a comprehensive School Management System built to manage student records, teacher profiles, grades, schedules, and communication.",
-        details:
-            "It includes robust features like role-based permissions, real-time notifications, and report generation to enhance school operations for administrators, teachers, and students.",
-        images: [sms01, sms02, sms03, sms04, sms05, sms06],
-        githubLink: "https://github.com/abirhasankhan/SMS-assessment",
-        year: "2024",
-        category: "Full-Stack",
-        status: "Completed",
-        tech: ["Full-Stack", "Role-Based Permissions", "Real-Time Notifications", "Report Generation"],
-    },
+    // {
+    //     id: 7,
+    //     title: "SMS-assessment (School Management System)",
+    //     description:
+    //         "SMS-assessment is a comprehensive School Management System built to manage student records, teacher profiles, grades, schedules, and communication.",
+    //     details:
+    //         "It includes robust features like role-based permissions, real-time notifications, and report generation to enhance school operations for administrators, teachers, and students.",
+    //     images: [sms01, sms02, sms03, sms04, sms05, sms06],
+    //     githubLink: "https://github.com/abirhasankhan/SMS-assessment",
+    //     year: "2024",
+    //     category: "Full-Stack",
+    //     status: "Completed",
+    //     tech: ["Full-Stack", "Role-Based Permissions", "Real-Time Notifications", "Report Generation"],
+    // },
 ];
 
 export default projects;
