@@ -645,7 +645,7 @@ const SprozPlayerPage = () => {
 
 							<div className="flex flex-wrap gap-3">
 								<a
-									href="https://github.com/abirkhan04/sproz-music-player"
+									href="https://github.com/abirhasankhan/sproz-music-player"
 									target="_blank"
 									rel="noreferrer"
 									className={`sproz-btn-pill inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono font-bold text-sm ${accentBg} ${darkMode ? "text-gray-900" : "text-white"}`}
@@ -881,7 +881,7 @@ const SprozPlayerPage = () => {
 					</p>
 					<div className="flex flex-wrap gap-4 justify-center">
 						<a
-							href="https://github.com/abirkhan04/sproz-music-player"
+							href="https://github.com/abirhasankhan/sproz-music-player"
 							target="_blank"
 							rel="noreferrer"
 							className={`sproz-btn-pill inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-mono font-bold text-sm ${accentBg} ${darkMode ? "text-gray-900" : "text-white"}`}
@@ -897,7 +897,7 @@ const SprozPlayerPage = () => {
 							View on GitHub
 						</a>
 						<a
-							href="https://github.com/abirkhan04/sproz-music-player/releases"
+							href="https://github.com/abirhasankhan/sproz-music-player/releases"
 							target="_blank"
 							rel="noreferrer"
 							className={`sproz-btn-pill inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-mono font-bold text-sm border ${darkMode ? "border-green-400/40 text-green-400 hover:bg-green-400/10" : "border-purple-400/40 text-purple-600 hover:bg-purple-100"}`}
@@ -920,7 +920,7 @@ const SprozPlayerPage = () => {
 					</a>{" "}
 					· GPL-2.0 ·{" "}
 					<a
-						href="https://github.com/abirkhan04/sproz-music-player"
+						href="https://github.com/abirhasankhan/sproz-music-player"
 						target="_blank"
 						rel="noreferrer"
 						className={mutedText}
